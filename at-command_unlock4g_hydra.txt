@@ -1,6 +1,4 @@
 ====== AT Command untuk menyesuaikan band =======
-at+zlteband=4,0,0,0,0,0,0,0 <<PAKAI INI PERTAMA
-at+zlteband=0,0,0,0,128,0,0,0 << B40
 
 B1
 AT+ZLTEBAND=1,0,0,0,0,0,0,0
@@ -11,11 +9,11 @@ AT+ZLTEBAND=16,0,0,0,0,0,0,0
 B8
 AT+ZLTEBAND=128,0,0,0,0,0,0,0
 B40
-AT+ZLTEBAND=128,0,0,0,0,0,0,0
+AT+ZLTEBAND=0,0,0,0,128,0,0,0
 
-at+zlteband=149,0,0,0,128,0,0,0 << B1 + B3 + B5 + B8 + B40 (band mayoritas yang dipakai di indonesia)
+AT+ZLTEBAND=133,0,0,0,128,0,0,0 << B1 + B3 + B8 + B40
 
-
+AT+ZLTEBAND=149,0,0,0,128,0,0,0 << B1 + B3 + B5 + B8 + B40
 
 ====== Setting manual Band buat zlteband =======
 
@@ -52,11 +50,3 @@ Hitungan BIT
 7 = 64
 8 = 128
 
-
-
-http://192.168.0.1/goform/goform_set_cmd_process?goformId=SET_DEVICE_MODE&debug_enable=1
-
-abis itu download file Develop Driver_PST.exe
-
-Download Putty
-https://www.putty.org/
