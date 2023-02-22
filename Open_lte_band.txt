@@ -1,0 +1,48 @@
+====== AT Command untuk set LTE Band =======
+
+B1
+AT+ZLTEBAND=1,0,0,0,0,0,0,0
+B3
+AT+ZLTEBAND=4,0,0,0,0,0,0,0
+B5
+AT+ZLTEBAND=16,0,0,0,0,0,0,0
+B8
+AT+ZLTEBAND=128,0,0,0,0,0,0,0
+B40
+AT+ZLTEBAND=0,0,0,0,128,0,0,0
+
+AT+ZLTEBAND=133,0,0,0,128,0,0,0 << B1 + B3 + B8 + B40
+
+AT+ZLTEBAND=149,0,0,0,128,0,0,0 << B1 + B3 + B5 + B8 + B40
+
+====== Setting manual Band buat zlteband =======
+
+Buka debug mode
+
+http://192.168.0.1/goform/goform_set_cmd_process?goformId=SET_DEVICE_MODE&debug_enable=1
+
+(BIT 1-8),(BIT 1-8) ,(BIT 1-8)  ,(BIT 1-8)  ,(BIT 1-8)  ,(BIT 1-8)  ,(BIT 1-8)  ,(BIT 1-8)
+<band1-8>,<band9-16>,<band17-24>,<band25-32>,<band33-40>,<band41-48>,<band49-56>,<band57-64>
+
+Hitungan BIT
+
+1 = 1
+2 = 2
+3 = 4
+4 = 8
+5 = 16
+6 = 32
+7 = 64
+8 = 128
+
+contoh 
+
+-jika ingin buka b1 + b3 + b8 pakai perhitungan bit jadi 1 + 4 + 128 = 133, maka nilainya adalah 133,0,0,0,0,0,0,0
+ 
+-jika ingin buka b10 + b15 pakai perhitungan bit jadi 2 + 64 = 66, maka nilainya adalah 0,66,0,0,0,0,0,0
+
+-jika ingin buka 37 + b40 pakai perhitungan bit jadi 16 + 128 = , maka nilainya adalah 0,0,0,0,144,0,0,0
+
+
+untuk max value masing2 255 yang berarti unlock all band di setiap kelompok band dan 0 tidak dipakai.
+
